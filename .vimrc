@@ -7,8 +7,12 @@ set tabstop=4               " Tabs width in spaces
 set shiftwidth=4            " Amount of spaces when shifting in visual mode
 set cursorline              " Highlight the line the cursor is on
 set expandtab               " expand tabs to 'tabstop'
+set relativenumber          " set relative line numbers
 set scrolloff=999           " Keep the cursor centered in the screen
-
+set list lcs=tab:»·         " Show tabs
+set backspace=2 " Backspace deletes like most programs in insert mode
+hi Search guibg=peru guifg=wheat
+let mapleader = "ö"
 """""""""""""""""""""""""
 "  airline
 """""""""""""""""""""""""
@@ -43,8 +47,9 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 
 "NERDTree
-noremap <silent> <C-L>  :NERDTreeToggle<CR>
-
+noremap <silent> <Leader>l  :NERDTreeToggle<CR>
+"Toggle Linenumbers
+map <Leader>c :set relativenumber!<CR>
 " ctrl-c to copy
 map <C-c> "+y<CR>      
 
@@ -61,14 +66,53 @@ command -nargs=0 -bar Update if &modified
                            \|    endif
                            \|endif
 " ctrl-s to save keeping the current mode
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
-
-"""""""""""""""""""""""""
+noremap <silent> <Leader>s          :update<CR>
+vnoremap <silent> <Leader>s         <C-C>:update<CR>
+inoremap <silent> <Leader>s         <C-O>:update<CR>
+""""""""""""""""""""""""
 " load c, cpp specifics
 """""""""""""""""""""""""
 au Filetype c source ~/.config/vim/c.vim
 au Filetype cpp source ~/.config/vim/cpp.vim
 au Filetype tex,latex source ~/.config/vim/tex.vim
+au Filetype lua source ~/.config/vim/lua.vim
 autocmd BufWinEnter *.td source ~/.config/vim/tablegen.vim
+
+"----------------------------------------------------------------------
+" Swap settings
+"----------------------------------------------------------------------
+" Save your swp files to a less annoying place than the current directory.
+" If you have .vim-swap in the current directory, it'll use that.
+" Otherwise it saves it to ~/.vim/swap, ~/tmp or .
+if isdirectory($HOME . '/.vim/swap') == 0
+  :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
+endif
+set directory=./.vim-swap//
+set directory+=~/.vim/swap//
+set directory+=~/tmp//
+set directory+=.
+
+"----------------------------------------------------------------------
+" Save session
+"----------------------------------------------------------------------
+" Tell vim to remember certain things when we exit
+"  '10  :  marks will be remembered for up to 10 previously edited files
+"  "100 :  will save up to 100 lines for each register
+"  :20  :  up to 20 lines of command-line history will be remembered
+"  %    :  saves and restores the buffer list
+"  n... :  where to save the viminfo files
+set viminfo='10,\"100,:20,%,n~/.vim/viminfo
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+if exists("+undofile")
+  " undofile - This allows you to use undos after exiting and restarting
+  " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
+  " :help undo-persistence
+  " This is only present in 7.3+
+  if isdirectory($HOME . '/.vim/undo') == 0
+    :silent !mkdir -p ~/.vim/undo > /dev/null 2>&1
+  endif
+  set undodir=./.vim-undo//
+  set undodir+=~/.vim/undo//
+  set undofile
+endif
