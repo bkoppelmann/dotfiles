@@ -11,7 +11,7 @@ set relativenumber          " set relative line numbers
 set scrolloff=999           " Keep the cursor centered in the screen
 set list lcs=tab:»·         " Show tabs
 set backspace=2 " Backspace deletes like most programs in insert mode
-hi Search guibg=peru guifg=wheat
+hi Search cterm=NONE ctermfg=red ctermbg=green
 let mapleader = "ö"
 """""""""""""""""""""""""
 "  airline
@@ -50,6 +50,10 @@ noremap <Right> <NOP>
 noremap <silent> <Leader>l  :NERDTreeToggle<CR>
 "Toggle Linenumbers
 map <Leader>c :set relativenumber!<CR>
+" Remove diff +
+map <Leader>+ :%s/^[+]//<CR>
+" Remove trailing whitespaces
+map <Leader>w :%s/\s\+$//e<CR>
 " ctrl-c to copy
 map <C-c> "+y<CR>      
 
