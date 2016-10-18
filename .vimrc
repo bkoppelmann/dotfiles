@@ -112,7 +112,7 @@ inoremap <silent> <Leader>s         <C-O>:update<CR>
 """""""""""""""""""""""""
 au Filetype c source ~/.config/vim/c.vim
 au Filetype cpp source ~/.config/vim/cpp.vim
-au Filetype tex,latex source ~/.config/vim/tex.vim
+au Filetype plaintex,tex,latex source ~/.config/vim/tex.vim
 au Filetype lua source ~/.config/vim/lua.vim
 autocmd BufWinEnter *.td source ~/.config/vim/tablegen.vim
 
