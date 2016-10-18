@@ -63,6 +63,14 @@ noremap <Right> <NOP>
 noremap h <NOP>
 noremap l <NOP>
 
+" Fugitive
+noremap <silent> <Leader>gs :Gstatus<CR>
+noremap <silent> <Leader>gc :Gcommit -s<CR>
+noremap <silent> <Leader>gw :Gwrite<CR>
+noremap <silent> <Leader>gd :Gdiff<CR>
+noremap <silent> <Leader>gr :Gread<CR>
+noremap <silent> <Leader>gp :Gpush<CR>
+
 "NERDTree
 noremap <silent> <Leader>l  :NERDTreeToggle<CR>
 "Toggle Linenumbers
