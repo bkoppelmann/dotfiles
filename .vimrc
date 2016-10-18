@@ -114,8 +114,9 @@ au Filetype c source ~/.config/vim/c.vim
 au Filetype cpp source ~/.config/vim/cpp.vim
 au Filetype plaintex,tex,latex source ~/.config/vim/tex.vim
 au Filetype lua source ~/.config/vim/lua.vim
-autocmd BufWinEnter *.td source ~/.config/vim/tablegen.vim
 
+" Custom filetypes
+au BufRead,BufNewFile *.td set filetype=tablegen
 "----------------------------------------------------------------------
 " Swap settings
 "----------------------------------------------------------------------
