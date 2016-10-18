@@ -77,6 +77,9 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
+"CtrlP
+map <F5> :CtrlPClearCache<CR>
+
 "NERDTree
 noremap <silent> <Leader>l  :NERDTreeToggle<CR>
 "Toggle Linenumbers
