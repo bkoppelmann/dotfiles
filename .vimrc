@@ -10,7 +10,11 @@ set expandtab               " expand tabs to 'tabstop'
 set relativenumber          " set relative line numbers
 set scrolloff=999           " Keep the cursor centered in the screen
 set list lcs=tab:»·         " Show tabs
-set backspace=2 " Backspace deletes like most programs in insert mode
+set backspace=2             " Backspace deletes like most programs in insert mode
+set wildmenu                " Enhance command-line completion
+set wrapscan                " set the search scan to wrap lines
+set tags=tags;/             " Search for tags file until found
+
 hi Search cterm=NONE ctermfg=red ctermbg=green
 let mapleader = "ö"
 """""""""""""""""""""""""
@@ -35,6 +39,15 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_theme='murmur'
+
+"""""""""""""""""""""""""
+"  CtrlP ignores
+"""""""""""""""""""""""""
+
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]((\.(git|hg|svn))|target$)',
+    \ 'file': '\v((\.(exe|so|dll|class|cache|jar|))|tags)$',
+    \ }
 
 """""""""""""""""""""""""
 "  Key remappings
