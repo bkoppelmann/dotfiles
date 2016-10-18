@@ -59,6 +59,10 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+"Breaking habbits again :DD
+noremap h <NOP>
+noremap l <NOP>
+
 "NERDTree
 noremap <silent> <Leader>l  :NERDTreeToggle<CR>
 "Toggle Linenumbers
