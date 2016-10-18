@@ -71,6 +71,12 @@ noremap <silent> <Leader>gd :Gdiff<CR>
 noremap <silent> <Leader>gr :Gread<CR>
 noremap <silent> <Leader>gp :Gpush<CR>
 
+"Split navigation
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
 "NERDTree
 noremap <silent> <Leader>l  :NERDTreeToggle<CR>
 "Toggle Linenumbers
