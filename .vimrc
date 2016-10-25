@@ -113,15 +113,6 @@ map <C-c> "+y<CR>
 " \m to remove annoying windows line breaks ^M
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" If the current buffer has never been saved, it will have no name,
-" call the file browser to save it, otherwise just save it.
-command -nargs=0 -bar Update if &modified 
-                           \|    if empty(bufname('%'))
-                           \|        browse confirm write
-                           \|    else
-                           \|        confirm write
-                           \|    endif
-                           \|endif
 " ctrl-s to save keeping the current mode
 noremap <silent> <Leader>s          :update<CR>
 vnoremap <silent> <Leader>s         <C-C>:update<CR>
