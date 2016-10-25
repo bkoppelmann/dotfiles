@@ -63,6 +63,17 @@ noremap <Right> <NOP>
 noremap h <NOP>
 noremap l <NOP>
 
+" This makes j and k work on "screen lines" instead of on "file lines"; now, when
+" we have a long line that wraps to multiple screen lines, j and k behave as we
+" expect them to.
+nnoremap j gj
+nnoremap k gk
+
+" Easy editing of .vimrc
+
+noremap <Leader>v :tabnew ~/.vimrc<CR>
+noremap <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>
+
 " Fugitive
 noremap <silent> <Leader>gs :Gstatus<CR>
 noremap <silent> <Leader>gc :Gcommit -s<CR>
