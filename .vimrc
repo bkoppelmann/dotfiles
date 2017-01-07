@@ -17,6 +17,12 @@ set tags=tags;/             " Search for tags file until found
 
 hi Search cterm=NONE ctermfg=red ctermbg=green
 let mapleader = "ö"
+
+"""""""""""""""""""""""""
+" Fix terminator...
+"""""""""""""""""""""""""
+colors default "somehow it uses the wrong color theme...
+
 """""""""""""""""""""""""
 "  airline
 """""""""""""""""""""""""
