@@ -1,0 +1,49 @@
+snippet sec
+\section{$1}
+    $2
+endsnippet
+
+snippet chp
+\chapter{$1}
+    $2
+endsnippet
+
+snippet item
+\begin{itemize}
+    \item $1
+\end{itemize}
+endsnippet
+
+snippet enum
+\begin{enumerate}
+    \item $1
+\end{enumerate}
+endsnippet
+
+snippet bf
+\textbf{$1}
+endsnippet
+
+snippet em
+\emph{$1}
+endsnippet
+
+snippet ref
+\ref{$1}
+endsnippet
+
+snippet fig
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=$1]{$2}
+    \caption{$3}
+    \label{$4}
+\end{figure}
+endsnippet
+
+snippet list
+\begin{lstlisting}[frame=single, label=lst:$1, language=$2, captionpos=b, caption={$3}]
+$4
+\end{lstlisting}
+endsnippet
+
