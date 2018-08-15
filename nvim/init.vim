@@ -6,16 +6,20 @@ set hlsearch                " Highlight searches
 set tabstop=4
 set shiftwidth=4
 set cursorline
+set lazyredraw
 hi CursorLine cterm=NONE ctermbg=Black guibg=Black guifg=NONE
 set expandtab
 set number relativenumber
 set scrolloff=999
+set textwidth=80
 set list lcs=tab:»·         " Show tabs
 set backspace=2
 set wildmenu
 set wrapscan
 set tags=tags;/
 set mouse=
+let g:tex_flavor = "latex"
+colorscheme juander
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -43,14 +47,31 @@ Plug 'derekwyatt/vim-scala'
 " Rainbow :D
 Plug 'kien/rainbow_parentheses.vim'
 " Neomake
-Plug 'neomake/neomake'
-"Auto completion
-Plug 'roxma/nvim-completion-manager'
-" scala
-Plug 'ensime/ensime-vim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'neomake/neomake'
+Plug 'wbthomason/buildit.nvim'
+"Autocomplete
+Plug 'ncm2/ncm2'
+" ncm2 requires nvim-yarp
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-pyclang'
+
 " surround
 Plug 'tpope/vim-surround'
 call plug#end()
+
+"""""""""""""""""""""""""
+" Autobuild
+""""""""""""""""""""""""
+autocmd BufWrite *.tex :BuildIt
+
+"""""""""""""""""""""""""
+" Autocomplete
+""""""""""""""""""""""""
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+let g:ncm2_pyclang#library_path = '/usr/lib/'
 
 """""""""""""""""""""""""
 " Rainbow paranthesis
@@ -91,16 +112,23 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|class)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-
+"""""""""""""""""""""""""""""""""""""
+"     Terminal
+"""""""""""""""""""""""""""""""""""""
+tnoremap <C-ESC> <C-\><C-n>
+autocmd BufWinEnter,WinEnter term://* startinsert
 """""""""""""""""""""""""""""""""""""
 "     Keymappings
 """""""""""""""""""""""""""""""""""""
+
 let mapleader=","
 "Breaking habbits :D
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+
+nnoremap ; :
 
 "Breaking habbits again :DD
 noremap h <NOP>
