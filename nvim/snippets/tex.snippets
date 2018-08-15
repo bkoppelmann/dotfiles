@@ -42,8 +42,15 @@ snippet fig
 endsnippet
 
 snippet list
-\begin{lstlisting}[frame=single, label=lst:$1, language=$2, captionpos=b, caption={$3}]
+\begin{lstlisting}[frame=single, label=lst:$1, language=$2,
+                   captionpos=b, caption={$3}]
 $4
 \end{lstlisting}
+endsnippet
+
+snippet frame
+\begin{frame}{$1}
+$2
+\end{frame}
 endsnippet
 
