@@ -19,7 +19,7 @@ set wrapscan
 set tags=tags;/
 set mouse=
 let g:tex_flavor = "latex"
-colorscheme juander
+colorscheme kbastian
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
