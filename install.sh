@@ -38,4 +38,5 @@ make_sym "$dothome/nvim" "$home/.config/nvim"
 make_sym "$dothome/ctags" "$home/.ctags"
 make_sym "$dothome/ncmpcpp" "$home/.ncmpcpp"
 make_sym "$dothome/spacemacs" "$home/.spacemacs"
+make_sym "$dothome/kitty" "$home/.config/kitty"
 install_neomutt
