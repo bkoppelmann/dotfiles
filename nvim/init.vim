@@ -34,44 +34,13 @@ Plug 'SirVer/ultisnips'
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" CtrlP
-Plug 'ctrlpvim/ctrlp.vim'
-" Fugative
-Plug 'tpope/vim-fugitive'
 " Supertab
 Plug 'ervandew/supertab'
-" Sneak
-Plug 'justinmk/vim-sneak'
 " Scala stuff
 Plug 'derekwyatt/vim-scala'
 " Rainbow :D
 Plug 'kien/rainbow_parentheses.vim'
-" Neomake
-"Plug 'neomake/neomake'
-Plug 'wbthomason/buildit.nvim'
-"Autocomplete
-Plug 'ncm2/ncm2'
-" ncm2 requires nvim-yarp
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2-jedi'
-Plug 'ncm2/ncm2-pyclang'
-
-" surround
-Plug 'tpope/vim-surround'
 call plug#end()
-
-"""""""""""""""""""""""""
-" Autobuild
-""""""""""""""""""""""""
-autocmd BufWrite *.tex :BuildIt
-
-"""""""""""""""""""""""""
-" Autocomplete
-""""""""""""""""""""""""
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
-let g:ncm2_pyclang#library_path = '/usr/lib/'
 
 """""""""""""""""""""""""
 " Rainbow paranthesis
@@ -102,21 +71,6 @@ let g:airline_theme='murmur'
 """""""""""""""""""""""""
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-"""""""""""""""""""""""""
-"  CtrlP
-"""""""""""""""""""""""""
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|class)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-"""""""""""""""""""""""""""""""""""""
-"     Terminal
-"""""""""""""""""""""""""""""""""""""
-tnoremap <C-ESC> <C-\><C-n>
-autocmd BufWinEnter,WinEnter term://* startinsert
 """""""""""""""""""""""""""""""""""""
 "     Keymappings
 """""""""""""""""""""""""""""""""""""
@@ -148,14 +102,6 @@ nnoremap k gk
 noremap <Leader>v :tabnew ~/.config/nvim/init.vim<CR>
 noremap <Leader>V :source ~/.config/nvim/init.vim<CR>:filetype detect<CR>
 
-" Fugitive
-noremap <silent> <Leader>gs :Gstatus<CR>
-noremap <silent> <Leader>gc :Gcommit -s<CR>
-noremap <silent> <Leader>gw :Gwrite<CR>
-noremap <silent> <Leader>gd :Gdiff<CR>
-noremap <silent> <Leader>gr :Gread<CR>
-noremap <silent> <Leader>gp :Gpush<CR>
-
 noremap <leader> t <C-W>T
 
 "Split navigation
@@ -174,14 +120,8 @@ nnoremap th :tabprev<CR>
 nnoremap tj :tabfirst<CR>
 nnoremap tk :tablast<CR>
 
-"CtrlP
-map <F5> :CtrlPClearCache<CR>
-
 "Toggle Linenumbers
 map <Leader>c :set number! relativenumber!<CR>
-
-" Remove diff +
-map <Leader>+ :%s/^[+]//<CR>
 
 " Remove trailing whitespaces
 map <Leader>w :%s/\s\+$//e<CR>
@@ -191,7 +131,6 @@ map <C-c> "+y<CR>
 
 " \m to remove annoying windows line breaks ^M
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
 
 "-----------------------------
 " UltiSnips: Snippets for Vim.
@@ -210,6 +149,7 @@ let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 " Save your swp files to a less annoying place than the current directory.
 " If you have .vim-swap in the current directory, it'll use that.
 " Otherwise it saves it to ~/.vim/swap, ~/tmp or .
+
 if isdirectory($HOME . '/.vim/swap') == 0
   :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
 endif
