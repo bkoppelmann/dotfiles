@@ -1,4 +1,7 @@
 #!/bin/bash
+dir=`dirname $0`
+dothome=`realpath $dir`
+home=`realpath ~`
 
 make_sym() {
     if [[ -f $2 || -d $2 ]]; then
@@ -24,13 +27,15 @@ make_sym() {
     ln -s $1 $2
 }
 
-dir=`dirname $0`
-dothome=`realpath $dir`
-home=`realpath ~`
+install_neomutt () {
+    gpg -o "$dothome/neomutt/alias" "$dothome/neomutt/alias.gpg"
+    gpg -o "$dothome/neomutt/mailboxes" "$dothome/neomutt/mailboxes.gpg"
+    make_sym "$dothome/neomutt" "$home/.config/neomutt"
+}
 
 make_sym "$dothome/bashrc" "$home/.bashrc"
 make_sym "$dothome/nvim" "$home/.config/nvim"
 make_sym "$dothome/ctags" "$home/.ctags"
 make_sym "$dothome/ncmpcpp" "$home/.ncmpcpp"
 make_sym "$dothome/spacemacs" "$home/.spacemacs"
-make_sym "$dothome/neomutt" "$home/.config/neomutt"
+install_neomutt

@@ -1,0 +1,44 @@
+# vim: filetype=muttrc
+
+macro index,pager e "<pipe-message>nvim<return>"
+macro index,pager E "<pipe-message>~/.config/neomutt/scripts/openterminal.sh<return>"
+
+# some sane vim-like keybindings
+bind index k previous-entry
+bind index j next-entry
+bind index,pager g noop
+bind index,pager \Cu half-up
+bind index,pager \Cd half-down
+bind pager gg top
+bind index gg first-entry
+bind pager G bottom
+bind index G last-entry
+bind pager k previous-line #scroll inside the message rather than the index
+bind pager j next-line
+
+# Sidebar binds
+bind index,pager \CK sidebar-prev                 # Ctrl-n to select next folder
+bind index,pager \CJ sidebar-next                 # Ctrl-p to select previous folder
+bind index,pager \CL sidebar-open                 # Ctrl-o to open selected folder
+bind index,pager \CH sidebar-toggle-visible       # Ctrl-b to toggle visibility of the sidebar
+
+unbind index h
+bind index <space> collapse-thread
+bind pager,attach h exit
+bind pager t display-toggle-weed
+bind index l display-message
+bind index D delete-thread
+macro index S "<enter-command>source ~/.config/neomutt/neomuttrc<return>"
+bind attach l view-mailcap
+
+# Refresh mails
+macro index,pager <F5> !offlineimap<return>
+bind compose h exit
+
+# Alias Menu
+bind alias h exit
+bind alias l select-entry
+
+# Browser Menu
+bind browser h exit
+bind browser l select-entry

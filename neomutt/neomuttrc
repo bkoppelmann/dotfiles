@@ -1,43 +1,46 @@
 # Personal Data
 set realname='Bastian Koppelmann'
+set from='kbastian@mail.uni-paderborn.de'
+set use_from = yes
 
 # Sidebar
 set sidebar_visible
-set sidebar_format="%B%?F? [%F]?%* %?N?%N?"
-set mail_check_stats
-set sidebar_width = 30                  # Plenty of space
-set sidebar_short_path                  # Shorten mailbox names
-set sidebar_delim_chars="/"             # Delete everything up to the last / character
-set sidebar_folder_indent               # Indent folders whose names we've shortened
-set sidebar_indent_string="  "          # Indent with two spaces
+set sidebar_short_path
+set sidebar_folder_indent
+set sidebar_width = 25
+set sidebar_indent_string = '  ''
+set sidebar_format = "%B %* %?N?[%N]?"
 
-set imap_user="kbastian"
-set folder=imaps://mail.uni-paderborn.de:993
+set strict_threads = yes
+
+# offline imap
+set folder="~/Mail/upb/mbox"
+source ~/.config/neomutt/mailboxes
+set spoolfile="+INBOX"
+set record="+Sent"
+set postponed="+Drafts"
+
+set trash='+Trash'
+
+set smtp_url=smtps://kbastian@mail.uni-paderborn.de:465
+set smtp_authenticators="gssapi:login"
+set ssl_starttls = yes
+
 set sort=threads  # primary sorting method
-
-
-set spoolfile=+INBOX
-set record="+[UPB]/Sent Mail"
-set postponed="+[UPB]/Drafts"
+set collapse_all = yes
 
 set sleep_time=0 # be faster
 set beep=no # no beep sound
 set editor="nvim"
 
-set imap_authenticators="gssapi"
-set imap_check_subscribed
+set pipe_decode = yes
+set wait_key = no
 
-# Vim keybinds
-bind attach,index,pager \CD next-page
-bind attach,index,pager \CU previous-page
-bind pager g top
-bind pager G bottom
-bind attach,index g first-entry
-bind attach,index G last-entry
 
-# Sidebar binds
-bind index,pager \CP sidebar-prev                 # Ctrl-n to select next folder
-bind index,pager \CN sidebar-next                 # Ctrl-p to select previous folder
-bind index,pager \CI sidebar-open                 # Ctrl-o to open selected folder
-bind index,pager \CB sidebar-toggle-visible       # Ctrl-b to toggle visibility of the sidebar
+set index_format="%Z | %{%Y %b %d} | %-20.20L |%3M | %s "
 
+set alias_file=~/.config/neomutt/alias
+
+source ~/.config/neomutt/keybinds
+source ~/.config/neomutt/colors
+source ~/.config/neomutt/alias
