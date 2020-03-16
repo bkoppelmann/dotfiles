@@ -77,14 +77,9 @@ export TERM=xterm-256color
 alias ls="ls -la --color=auto"
 alias pu="sudo pacman -Syu"
 alias ducks='du -cks * | sort -rn | head'
-alias vi='vim'
+alias vi='nvim'
 alias kw='date +"%V"'
-alias vitodo='vi /home/juander/Documents/Work/TODO.org'
 
 export SWT_GTK3=0
-export EDITOR=vim
+export EDITOR=nvim
 source /usr/share/git/completion/git-completion.bash
-
-# RISCV
-export RISCV=$HOME/coding/riscv/toolchain/RV64G
-export PATH=$PATH:$RISCV/bin
