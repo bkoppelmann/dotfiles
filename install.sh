@@ -40,4 +40,5 @@ make_sym "$dothome/ncmpcpp" "$home/.ncmpcpp"
 make_sym "$dothome/spacemacs" "$home/.spacemacs"
 make_sym "$dothome/kitty" "$home/.config/kitty"
 make_sym "$dothome/mailcap" "$home/.mailcap"
+make_sym "$dothome/offlineimaprc" "$home/.offlineimaprc"
 install_neomutt
