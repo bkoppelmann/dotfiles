@@ -34,9 +34,13 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
+     (python :variables
+           python-backend 'anaconda
+     )
      vimscript
-     (scala :variables scala-backend 'scala-metals)
+     (scala :variables
+            scala-backend 'scala-metals
+     )
      c-c++
      gtags
      ;; ----------------------------------------------------------------
