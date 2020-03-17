@@ -40,8 +40,11 @@ values."
      vimscript
      (scala :variables
             scala-backend 'scala-metals
+            scala-use-unicode-arrows t
      )
-     c-c++
+     (c-c++ :variables
+            c-c++-backend 'lsp-cquery
+     )
      gtags
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
