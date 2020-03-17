@@ -30,3 +30,9 @@ $ git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
 ```
 $ ./install.sh
 ```
+
+## Postinstall neovim
+Setup all the plugins, after starting nvim for the first time.
+```
+:PlugInstall
+```
