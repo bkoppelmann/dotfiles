@@ -1,0 +1,13 @@
+#+title: Dotfiles
+#+description: Thing missing from my dotfiles 
+
+* ctags
+** TODO Make scala metals run
+** TODO c/c++ layer: fix syntax errors in tcg.h
+* kitty
+* ncmccpp
+* neomutt
+* neovim
+** TODO Which hotkey is used to mark a thread as read?
+* offlineimap
+* Spacemacs
