@@ -1,13 +1,15 @@
 #+title: Dotfiles
-#+description: Thing missing from my dotfiles 
+#+description: Thing missing from my dotfiles
 
 * ctags
-** TODO Make scala metals run
-** TODO c/c++ layer: fix syntax errors in tcg.h
+* neomutt
+** TODO Which hotkey is used to mark a thread as read?
+** TODO Find propper reply-all button to bind to.
 * kitty
 * ncmccpp
-* neomutt
 * neovim
-** TODO Which hotkey is used to mark a thread as read?
 * offlineimap
 * Spacemacs
+** TODO Make scala metals run [ ]
+** TODO c/c++ layer: fix syntax errors in tcg.h
+** TODO python layer: Add lsp backend
