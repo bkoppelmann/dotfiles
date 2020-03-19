@@ -35,7 +35,7 @@ values."
    dotspacemacs-configuration-layers
    '(
      (python :variables
-           python-backend 'anaconda
+           python-backend 'lsp python-lsp-server 'pyls
      )
      vimscript
      (scala :variables

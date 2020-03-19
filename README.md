@@ -5,7 +5,7 @@
 
 ```
 $ sudo pacman -S emacs clang kitty ncmpcpp ctags neomutt nvim offlineimap cyrus-sasl-gssapi krb5 gpg \
-                 python-jedi
+                 python-jedi python-language-server
 ```
 
 ### AUR
