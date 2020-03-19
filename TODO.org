@@ -4,7 +4,8 @@
 * ctags
 * neomutt
 ** TODO Which hotkey is used to mark a thread as read?
-** TODO Find propper reply-all button to bind to.
+** DONE Find propper reply-all button to bind to.
+   CLOSED: [2020-03-19 Do 15:03]
 * kitty
 * ncmccpp
 * neovim
@@ -14,3 +15,4 @@
 ** TODO c/c++ layer: fix syntax errors in tcg.h
 ** DONE python layer: Add lsp backend
    CLOSED: [2020-03-19 Do 14:45]
+   
