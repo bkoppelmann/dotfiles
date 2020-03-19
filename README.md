@@ -19,6 +19,7 @@ $ sudo pacman -S emacs clang kitty ncmpcpp ctags neomutt nvim offlineimap cyrus-
 
 ```
 $ sudo pip3 install importmagic epc 
+$ pip3 install --user ical2orgpy
 ```
 
 # Installation 

@@ -41,4 +41,5 @@ make_sym "$dothome/spacemacs" "$home/.spacemacs"
 make_sym "$dothome/kitty" "$home/.config/kitty"
 make_sym "$dothome/mailcap" "$home/.mailcap"
 make_sym "$dothome/offlineimaprc" "$home/.offlineimaprc"
+make_sym "$dothome/mbox2org/mbox2org.py" "$home/.local/bin/mbox2org"
 install_neomutt
