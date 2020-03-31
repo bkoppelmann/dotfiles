@@ -3,7 +3,7 @@
 
 * ctags
 * neomutt
-** TODO Which hotkey is used to mark a thread as read?
+** DONE Which hotkey is used to mark a thread as read?
 ** DONE Find propper reply-all button to bind to.
    CLOSED: [2020-03-19 Do 15:03]
 * kitty
