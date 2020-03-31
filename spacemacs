@@ -33,7 +33,8 @@ values."
    find-file-visit-truename t
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(lua
+   '(javascript
+     lua
      (python :variables
            python-backend 'lsp python-lsp-server 'pyls
      )
