@@ -32,6 +32,8 @@ macro index S "<enter-command>source ~/.config/neomutt/neomuttrc<return>"
 bind attach l view-mailcap
 bind pager,index R group-reply
 bind index X read-thread
+bind index J next-unread
+bind index p limit
 
 # Refresh mails
 macro index,pager <F5> !offlineimap<return>
