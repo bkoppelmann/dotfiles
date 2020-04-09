@@ -5,14 +5,13 @@
 
 ```
 $ sudo pacman -S emacs clang kitty ncmpcpp ctags neomutt nvim offlineimap cyrus-sasl-gssapi krb5 gpg \
-                 python-jedi python-language-server
+                 python-jedi python-language-server ccls
 ```
 
 ### AUR
 
    - [metals](https://aur.archlinux.org/packages/metals/)
    - [python2-gssapi](https://aur.archlinux.org/packages/python2-gssapi/)
-   - [cquery](https://aur.archlinux.org/packages/cquery/)
    - [bear](https://aur.archlinux.org/packages/bear/)
 
 ## Python packages

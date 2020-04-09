@@ -45,7 +45,7 @@ values."
             scala-use-unicode-arrows t
      )
      (c-c++ :variables
-            c-c++-backend 'lsp-cquery
+            c-c++-backend 'lsp-ccls
      )
      gtags
      ;; ----------------------------------------------------------------
