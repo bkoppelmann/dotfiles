@@ -1,0 +1,8 @@
+[user]
+	email = kbastian@mail.uni-paderborn.de
+	name = Bastian Koppelmann
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore
+[alias]
+	s = status
