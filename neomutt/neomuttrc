@@ -1,30 +1,24 @@
-# Personal Data
-set realname='Bastian Koppelmann'
-set from='kbastian@mail.uni-paderborn.de'
-set use_from = yes
-
 # Sidebar
 set sidebar_visible
-set sidebar_short_path
 set sidebar_folder_indent
 set sidebar_width = 25
 set sidebar_indent_string = '  ''
 set sidebar_format = "%B %* %?N?[%N]?"
-
+set mail_check_stats
 set strict_threads = yes
 
-# offline imap
-set folder="~/Mail/upb/mbox"
+set mbox_type
+set folder="~/Mail/"
 source ~/.config/neomutt/mailboxes
-set spoolfile="+INBOX"
-set record="+Sent"
-set postponed="+Drafts"
 
-set trash='+Trash'
+#default account
+source ~/.config/neomutt/accounts/kbastian.nmutt
 
-set smtp_url=smtps://kbastian@mail.uni-paderborn.de:465
-set smtp_authenticators="gssapi:login"
-set ssl_starttls = yes
+folder-hook +upb/ 'source ~/.config/neomutt/accounts/kbastian.nmutt'
+folder-hook +koppelmanns/ 'source ~/.config/neomutt/accounts/koppelmanns.nmutt'
+
+macro index <f1> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/kbastian.nmutt<enter><change-folder>!<enter>'
+macro index <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/koppelmanns.nmutt<enter><change-folder>!<enter>'
 
 set sort=threads  # primary sorting method
 set collapse_all = yes
@@ -35,7 +29,6 @@ set editor="nvim"
 
 set pipe_decode = yes
 set wait_key = no
-
 
 set index_format="%Z | %{%Y %b %d} | %-20.20L |%3M | %s "
 

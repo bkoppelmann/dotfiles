@@ -30,6 +30,8 @@ make_sym() {
 install_neomutt () {
     gpg -o "$dothome/neomutt/alias" "$dothome/neomutt/alias.gpg"
     gpg -o "$dothome/neomutt/mailboxes" "$dothome/neomutt/mailboxes.gpg"
+    gpg -o "$dothome/neomutt/accounts/kbastian.nmutt" "$dothome/neomutt/accounts/kbastian.nmutt.gpg"
+    gpg -o "$dothome/neomutt/accounts/koppelmanns.nmutt" "$dothome/neomutt/accounts/koppelmanns.nmutt.gpg"
     make_sym "$dothome/neomutt" "$home/.config/neomutt"
 }
 
