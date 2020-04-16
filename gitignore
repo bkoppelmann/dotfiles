@@ -1,2 +1,4 @@
 .ccls-cache/
 .bloop/
+build/
+compile_commands.json
