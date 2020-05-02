@@ -3,22 +3,22 @@ set sidebar_visible
 set sidebar_folder_indent
 set sidebar_width = 25
 set sidebar_indent_string = '  ''
+set sidebar_component_depth = 1
 set sidebar_format = "%B %* %?N?[%N]?"
 set mail_check_stats
 set strict_threads = yes
 
 set mbox_type
 set folder="~/Mail/"
-source ~/.config/neomutt/mailboxes
+source ~/.config/neomutt/private/mailboxes
 
 #default account
-source ~/.config/neomutt/accounts/kbastian.nmutt
+source ~/.config/neomutt/private/accounts/kbastian.nmutt
 
-folder-hook +upb/ 'source ~/.config/neomutt/accounts/kbastian.nmutt'
-folder-hook +koppelmanns/ 'source ~/.config/neomutt/accounts/koppelmanns.nmutt'
+folder-hook +upb/ 'source ~/.config/neomutt/private/accounts/kbastian.nmutt'
+folder-hook +koppelmanns/ 'source ~/.config/neomutt/private/accounts/koppelmanns.nmutt'
 
-macro index <f1> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/kbastian.nmutt<enter><change-folder>!<enter>'
-macro index <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/accounts/koppelmanns.nmutt<enter><change-folder>!<enter>'
+auto_view text/html
 
 set sort=threads  # primary sorting method
 set collapse_all = yes
@@ -30,10 +30,10 @@ set editor="nvim"
 set pipe_decode = yes
 set wait_key = no
 
-set index_format="%Z | %{%Y %b %d} | %-20.20L |%3M | %s "
+set index_format="%Z │ %{%Y %b %d} │ %-20.20L │%3M │ %s "
 
-set alias_file=~/.config/neomutt/alias
+set alias_file=~/.config/neomutt/private/alias
 
 source ~/.config/neomutt/keybinds
 source ~/.config/neomutt/colors
-source ~/.config/neomutt/alias
+source ~/.config/neomutt/private/alias

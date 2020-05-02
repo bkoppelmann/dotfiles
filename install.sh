@@ -27,14 +27,6 @@ make_sym() {
     ln -s $1 $2
 }
 
-install_neomutt () {
-    gpg -o "$dothome/neomutt/alias" "$dothome/neomutt/alias.gpg"
-    gpg -o "$dothome/neomutt/mailboxes" "$dothome/neomutt/mailboxes.gpg"
-    gpg -o "$dothome/neomutt/accounts/kbastian.nmutt" "$dothome/neomutt/accounts/kbastian.nmutt.gpg"
-    gpg -o "$dothome/neomutt/accounts/koppelmanns.nmutt" "$dothome/neomutt/accounts/koppelmanns.nmutt.gpg"
-    make_sym "$dothome/neomutt" "$home/.config/neomutt"
-}
-
 make_sym "$dothome/bashrc" "$home/.bashrc"
 make_sym "$dothome/nvim" "$home/.config/nvim"
 make_sym "$dothome/ctags" "$home/.ctags"
@@ -43,7 +35,9 @@ make_sym "$dothome/spacemacs" "$home/.spacemacs"
 make_sym "$dothome/kitty" "$home/.config/kitty"
 make_sym "$dothome/mailcap" "$home/.mailcap"
 make_sym "$dothome/offlineimaprc" "$home/.offlineimaprc"
+make_sym "$dothome/scripts/offlineimap.py" "$home/.offlineimap.py"
 make_sym "$dothome/mbox2org/mbox2org.py" "$home/.local/bin/mbox2org"
+make_sym "$dothome/scripts/pw_get.py" "$home/.local/bin/pw_get"
 make_sym "$dothome/gitconfig" "$home/.gitconfig"
 make_sym "$dothome/gitignore" "$home/.gitignore"
-install_neomutt
+make_sym "$dothome/neomutt" "$home/.config/neomutt"

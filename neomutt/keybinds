@@ -46,3 +46,6 @@ bind alias l select-entry
 # Browser Menu
 bind browser h exit
 bind browser l select-entry
+
+macro index,pager <f1> '<sync-mailbox><enter-command>source ~/.config/neomutt/private/accounts/kbastian.nmutt<enter><change-folder>!<enter>'
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.config/neomutt/private/accounts/koppelmanns.nmutt<enter><change-folder>!<enter>'
