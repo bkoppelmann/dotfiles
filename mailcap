@@ -1,15 +1,15 @@
 ###
 ### Begin Red Hat Mailcap
 ###
+text/html; w3m -dump %s; copiousoutput; nametemplate=%s.html
 text/*; nvim
-audio/*; /usr/bin/xdg-open %s
+audio/*; /usr/bin/xdg-open %s &
 
-image/*; /usr/bin/xdg-open %s
+image/*; feh %s &
 
-application/msword; /usr/bin/xdg-open %s
-application/pdf; /usr/bin/xdg-open %s
-application/postscript ; /usr/bin/xdg-open %s
-application/vnd.openxmlformats-officedocument.wordprocessingml.document ; /usr/bin/xdg-open %s
-application/vnd.openxmlformats-officedocument.presentationml.presentation ; /usr/bin xdg-open %s
+application/msword; /usr/bin/xdg-open %s &
+application/pdf; /usr/bin/xdg-open %s &
+application/postscript ; /usr/bin/xdg-open %s &
+application/vnd.openxmlformats-officedocument.wordprocessingml.document ; /usr/bin/xdg-open %s &
+application/vnd.openxmlformats-officedocument.presentationml.presentation ; /usr/bin xdg-open %s &
 
-text/html; cp %s %s.html && firefox %s.html
