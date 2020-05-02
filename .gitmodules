@@ -4,3 +4,6 @@
 [submodule "neomutt/private"]
 	path = neomutt/private
 	url = git@git.koppelmanns.de:kbastian/neomutt-private.git
+[submodule "offlineimap"]
+	path = offlineimap
+	url = git@git.koppelmanns.de:kbastian/offlineimap.git
