@@ -45,3 +45,6 @@ color signature     brightblack     default
 color bold          black           default
 color underline     black           default
 color normal        default         default
+
+# important mail names
+source private/color_alias
