@@ -30,6 +30,9 @@ set editor="nvim"
 set pipe_decode = yes
 set wait_key = no
 
+set fast_reply=yes
+set include=yes
+
 set index_format="%Z │ %{%Y %b %d} │ %-20.20L │%3M │ %s "
 
 set alias_file=~/.config/neomutt/private/alias
