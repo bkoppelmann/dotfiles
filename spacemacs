@@ -53,6 +53,10 @@ This function should only modify configuration layer settings."
      (c-c++ :variables
             c-c++-backend 'lsp-ccls
      )
+     (spell-checking :variables
+                     spell-checking-enable-auto-dictionary t
+                     spell-checking-enable-by-default nil
+                     )
      gtags
      emacs-lisp
      git
@@ -61,6 +65,7 @@ This function should only modify configuration layer settings."
      markdown
      multiple-cursors
      org
+     latex
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
