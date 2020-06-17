@@ -61,6 +61,8 @@ if [ "$PS1" ]; then
 complete -cf sudo
 fi
 
+set -o vi
+
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
