@@ -6,3 +6,13 @@
 	excludesfile = ~/.gitignore
 [alias]
 	s = status
+[color]
+	ui = true
+[sendemail]
+	smtpserver = mail.uni-paderborn.de
+	smtpuser = kbastian
+	smtpserverport = 25
+	suppresscc = self
+	smtpencryption = tls
+[am]
+	messageid = true
