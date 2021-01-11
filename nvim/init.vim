@@ -81,6 +81,9 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
+"otherwise vim hangs
+noremap <F10> <NOP>
+inoremap <F10> <NOP>
 
 nnoremap ; :
 
