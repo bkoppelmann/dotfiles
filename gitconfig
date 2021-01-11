@@ -16,3 +16,6 @@
 	smtpencryption = tls
 [am]
 	messageid = true
+[pull]
+	rebase = false
+	ff = only
