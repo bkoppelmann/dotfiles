@@ -1,10 +1,10 @@
 # Sidebar
 set sidebar_visible
 set sidebar_folder_indent
-set sidebar_width = 25
+set sidebar_width = 30
 set sidebar_indent_string = '  ''
 set sidebar_component_depth = 1
-set sidebar_format = "%B %* %?N?[%N]?"
+set sidebar_format = "%D %* %?N?[%N]?"
 set mail_check_stats
 set strict_threads = yes
 
