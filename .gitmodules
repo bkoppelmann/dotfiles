@@ -7,3 +7,6 @@
 [submodule "offlineimap"]
 	path = offlineimap
 	url = git@git.koppelmanns.de:kbastian/offlineimap.git
+[submodule "imapfilter"]
+	path = imapfilter
+	url = git@git.koppelmanns.de:kbastian/imapfilter.git
