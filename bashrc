@@ -47,6 +47,7 @@ alias dir="dir --color=auto"
 alias grep="grep --color=auto --exclude=tags"
 alias dmesg='dmesg --color'
 alias pacman="pacman --color=auto"
+alias videv="nvim -u ~/.config/nvim/dev.lua"
 
 PS2="> "
 PS3="> "
