@@ -8,7 +8,7 @@ options = { noremap = true, silent = true }
 -- remove highlight
 map('n', '<leader>h', ':noh<CR>', options)
 -- remove trailing ws
--- TODO: vim.cmd("map <Leader>w :%s/\s\+$//e<CR>")
+map('n', '<leader>w', "<cmd>lua trim_trailing_whitespaces()<CR>", options)
 
 map('v', '<', '<gv', options)
 map('v', '>', '>gv', options)
