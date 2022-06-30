@@ -13,4 +13,6 @@ return require('packer').startup(function()
 
   -- fzf
   use 'ibhagwan/fzf-lua'
+
+  use 'nvim-lualine/lualine.nvim'
 end)
