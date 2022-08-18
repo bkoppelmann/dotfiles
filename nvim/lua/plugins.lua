@@ -15,4 +15,7 @@ return require('packer').startup(function()
   use 'ibhagwan/fzf-lua'
 
   use 'nvim-lualine/lualine.nvim'
+
+  -- neogit
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 end)
