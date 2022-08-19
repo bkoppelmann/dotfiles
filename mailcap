@@ -2,15 +2,15 @@
 ### Begin Red Hat Mailcap
 ###
 text/html; w3m -dump %s; copiousoutput; nametemplate=%s.html
+text/calendar; /usr/bin/vcal %s ; copiousoutput
 text/*; nvim
 audio/*; /usr/bin/xdg-open %s &
 
 image/*; feh %s &
 
 application/msword; /usr/bin/xdg-open %s &
-application/pdf; /usr/bin/evince %s &
+application/pdf; /usr/bin/evince %s 2>/dev/null &
 application/postscript ; /usr/bin/xdg-open %s &
 application/vnd.openxmlformats-officedocument.wordprocessingml.document ; /usr/bin/xdg-open %s &
 application/vnd.openxmlformats-officedocument.presentationml.presentation ; /usr/bin/xdg-open %s &
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ; /usr/bin/xdg-open %s &
-
