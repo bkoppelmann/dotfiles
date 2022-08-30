@@ -1,5 +1,8 @@
 local neogit = require('neogit')
 
+-- giblame
+vim.g.gitblame_enabled = 0
+
 neogit.setup {
   disable_signs = true,
   disable_hint = false,

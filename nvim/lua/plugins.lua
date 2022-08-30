@@ -18,4 +18,5 @@ return require('packer').startup(function()
 
   -- neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
+  use { 'f-person/git-blame.nvim' }
 end)
