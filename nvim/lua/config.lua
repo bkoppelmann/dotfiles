@@ -6,6 +6,7 @@ o.swapfile = false
 o.hlsearch = true
 o.ignorecase = true
 o.tabstop = 4
+o.shiftwidth=4
 o.cursorline = true
 o.lazyredraw = true
 vim.cmd("hi CursorLine cterm=NONE ctermbg=Black guibg=Black guifg=NONE")
