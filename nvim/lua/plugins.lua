@@ -19,4 +19,9 @@ return require('packer').startup(function()
   -- neogit
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
   use { 'f-person/git-blame.nvim' }
+
+  -- treesitter
+  use { 'nvim-treesitter/nvim-treesitter' ,
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+  }
 end)
