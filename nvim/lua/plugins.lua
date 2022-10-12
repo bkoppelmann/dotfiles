@@ -12,7 +12,11 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
 
   -- fzf
-  use 'ibhagwan/fzf-lua'
+  --use 'ibhagwan/fzf-lua'
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  } 
 
   use 'nvim-lualine/lualine.nvim'
 
@@ -22,6 +26,6 @@ return require('packer').startup(function()
 
   -- treesitter
   use { 'nvim-treesitter/nvim-treesitter' ,
-        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
 end)
