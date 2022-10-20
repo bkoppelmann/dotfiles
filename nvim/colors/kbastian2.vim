@@ -63,8 +63,7 @@ highlight MatchParen guifg=#EBC06D guibg=#4D453E guisp=NONE gui=bold
 highlight ModeMsg guifg=#C1A78E guibg=NONE guisp=NONE gui=NONE
 highlight MoreMsg guifg=#78997A guibg=NONE guisp=NONE gui=bold
 highlight Normal guifg=#ECE1D7 guibg=#000000 guisp=NONE gui=NONE
-highlight NormalFloat guifg=NONE guibg=#ffffff guisp=NONE gui=NONE
-highlight StatusLine guifg=#FFFFFF guibg=#FFFFFF guisp=NONE gui=NONE
+highlight NormalFloat guifg=NONE guibg=#352F2A guisp=NONE gui=NONE
 highlight Number guifg=#CE9BCB guibg=NONE guisp=NONE gui=NONE
 highlight Operator guifg=#F17C64 guibg=NONE guisp=NONE gui=NONE
 highlight PmenuSel guifg=NONE guibg=#4D453E guisp=NONE gui=NONE
@@ -126,6 +125,7 @@ highlight! link SignifySignAdd GitSignsAdd
 highlight! link SignifySignChange GitSignsChange
 highlight! link SignifySignDelete GitSignsDelete
 highlight! link SpecialKey Whitespace
+highlight! link StatusLine NormalFloat
 highlight! link TSConstMacro Constant
 highlight! link TSEmphasis Italic
 highlight! link TSEnvironment Statement
