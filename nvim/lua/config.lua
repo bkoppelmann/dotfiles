@@ -9,15 +9,14 @@ o.tabstop = 4
 o.shiftwidth=4
 o.cursorline = true
 o.lazyredraw = true
-vim.cmd("hi CursorLine cterm=NONE ctermbg=Black guibg=Black guifg=NONE")
 o.expandtab = true
 o.number = true
 o.relativenumber = true
 o.scrolloff = 999
 o.textwidth = 80
--- TODO: show tabs
--- o.list.lcs = tab:»·
 o.backspace = 2
 o.wildmenu = true
 o.wrapscan = true
+o.list = true
+o.listchars = "trail:·,nbsp:◇,tab:»· ,extends:▸,precedes:◂"
 vim.cmd("colorscheme kbastian")
