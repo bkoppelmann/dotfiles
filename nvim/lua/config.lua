@@ -1,6 +1,9 @@
 local v = vim.api
 local o = vim.o
 
+o.termguicolors = true
+o.background = 'dark'
+
 o.ls = 2
 o.swapfile = false
 o.hlsearch = true
@@ -19,4 +22,4 @@ o.wildmenu = true
 o.wrapscan = true
 o.list = true
 o.listchars = "trail:·,nbsp:◇,tab:»· ,extends:▸,precedes:◂"
-vim.cmd("colorscheme kbastian")
+vim.cmd("colorscheme kbastian2")
