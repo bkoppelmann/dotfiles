@@ -58,4 +58,12 @@ return require('packer').startup(function()
     end,
   })
 
+  -- leap
+  use({
+    "ggandor/leap.nvim",
+    config = function()
+        require('user.plugins.leap')
+    end,
+  })
+
 end)
