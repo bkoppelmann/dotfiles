@@ -25,32 +25,6 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 match ErrorMsg '\%>80v.\+'
 
-"""""""""""""""""""""""""""""""""""""
-"     Plugins
-"""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.config/nvim/plugged')
-" Ultisnips
-Plug 'SirVer/ultisnips'
-" Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" Supertab
-Plug 'ervandew/supertab'
-" Scala stuff
-Plug 'derekwyatt/vim-scala'
-" Rainbow :D
-Plug 'kien/rainbow_parentheses.vim'
-call plug#end()
-
-"""""""""""""""""""""""""
-" Rainbow paranthesis
-""""""""""""""""""""""""
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
 """""""""""""""""""""""""
 "  airline
 """""""""""""""""""""""""
@@ -134,17 +108,6 @@ map <C-c> "+y<CR>
 
 " \m to remove annoying windows line breaks ^M
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-"-----------------------------
-" UltiSnips: Snippets for Vim.
-"-----------------------------
-let g:snips_author='Bastian Koppelmann <kbastian@mail.upb.de'
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsEnableSnipMate='no'
-let g:UltiSnipsSnippetDirectories=[$HOME . '/.config/nvim/snippets']
-let g:UltiSnipsExpandTrigger='<Tab>'
-let g:UltiSnipsJumpForwardTrigger='<Tab>'
-let g:UltiSnipsJumpBackwardTrigger='<S-Tab>'
 
 "----------------------------------------------------------------------
 " Swap settings
