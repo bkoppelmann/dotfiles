@@ -82,6 +82,7 @@ alias pu="sudo pacman -Syu"
 alias ducks='du -cks * | sort -rn | head'
 alias vi='nvim'
 alias kw='date +"%V"'
+alias sus='systemctl suspend'
 
 export SWT_GTK3=0
 export EDITOR=nvim
