@@ -17,7 +17,6 @@ o.number = true
 o.relativenumber = true
 o.scrolloff = 999
 o.textwidth = 80
-o.backspace = 2
 o.wildmenu = true
 o.splitright = true
 o.splitbelow = true
