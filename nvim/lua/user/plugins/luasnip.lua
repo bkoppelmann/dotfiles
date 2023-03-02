@@ -10,4 +10,4 @@ snip.add_snippets('mail', {
     snip.parser.parse_snippet('tb', 'Tested-by Bastian Koppelmann <kbastian@mail.uni-paderborn.de>'),
 })
 
-vim.keymap.set('i', '<C-n>', snip.expand_or_jump, options)
+-- tab completion if lspconfig.lua for SuperTab

@@ -62,6 +62,7 @@ require('lspconfig')['metals'].setup {
 
 -- nvim-cmp setup
 local cmp = require('cmp')
+local luasnip = require('luasnip')
 cmp.setup {
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -72,6 +73,8 @@ cmp.setup {
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       else
         fallback()
       end
