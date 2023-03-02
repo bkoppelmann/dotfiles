@@ -10,4 +10,4 @@ snip.add_snippets('mail', {
     snip.parser.parse_snippet('tb', 'Tested-by Bastian Koppelmann <kbastian@mail.uni-paderborn.de>'),
 })
 
-vim.keymap.set('i', '<Tab>', snip.expand_or_jump, options)
+vim.keymap.set('i', '<C-n>', snip.expand_or_jump, options)
