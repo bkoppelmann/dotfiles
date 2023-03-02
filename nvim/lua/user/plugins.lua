@@ -42,6 +42,7 @@ return require('packer').startup(function()
         require('user.plugins.neogit')
     end,
   })
+  -- git blame
   use { 'f-person/git-blame.nvim' }
 
   -- treesitter
@@ -67,11 +68,16 @@ return require('packer').startup(function()
   })
 
   -- lusnip
+  use({
+    'L3MON4D3/LuaSnip',
+    config = function()
+      require('user.plugins.luasnip')
+    end,
+  })
+
+   -- editorconfig
    use({
-     'L3MON4D3/LuaSnip',
-     config = function()
-       require('user.plugins.luasnip')
-     end,
+    "gpanders/editorconfig.nvim"
    })
 
 end)
