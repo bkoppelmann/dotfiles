@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = { "c", "lua", "cpp", "python", "scala" },
+    ensure_installed = { "c", "lua", "cpp", "python", "scala", "markdown"},
 
     highlight = {
         -- `false` will disable the whole extension
