@@ -18,6 +18,16 @@ return require('packer').startup(function()
     end,
   }
 
+  -- which key
+  use {
+    "folke/which-key.nvim",
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require('user.plugins.which-key')
+     end
+  }
+
   -- fuzzy finder
   use({
     'nvim-telescope/telescope.nvim', tag = '0.1.0',

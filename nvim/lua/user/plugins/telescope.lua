@@ -38,8 +38,8 @@ end
 
 -- keybindings
 local telescope_builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pt', new_file, options)
-vim.keymap.set('n', '<leader>pp', telescope_builtin.git_files, options)
-vim.keymap.set('n', '<leader>pf', telescope_builtin.find_files, options)
-vim.keymap.set('n', '<leader>/', telescope_builtin.live_grep, options)
-vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, options)
+vim.keymap.set('n', '<leader>pt', new_file, {desc = 'Create new file', unpack(options)})
+vim.keymap.set('n', '<leader>pp', telescope_builtin.git_files, { desc = 'Files in project', unpack(options)})
+vim.keymap.set('n', '<leader>pf', telescope_builtin.find_files, { desc = 'Files in folder', unpack(options)})
+vim.keymap.set('n', '<leader>/', telescope_builtin.live_grep, { desc = 'Live grep', unpack(options)})
+vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Live grep under cursor', unpack(options)})
