@@ -60,10 +60,25 @@ require('lspconfig')['metals'].setup {
     }
 }
 
+require'lspconfig'.rust_analyzer.setup{
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}
+
 -- nvim-cmp setup
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 cmp.setup {
+  snippet = {
+      expand = function(args)
+        luasnip.lsp_expand(args.body)
+      end
+    },
   mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<CR>'] = cmp.mapping.confirm {
