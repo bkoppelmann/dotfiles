@@ -1,4 +1,5 @@
 local telescope = require('telescope')
+local telescope_builtin = require('telescope.builtin')
 local actions = require('telescope.actions')
 telescope.setup({
     defaults = {
@@ -36,10 +37,38 @@ local new_file = function(opts)
   }):find()
 end
 
+local in_git_repo = function()
+  print(vim.fn.system('git rev-parse --is-inside-work-tree'))
+  return vim.v.shell_error == 0
+end
+
+local project_files = function()
+  if in_git_repo() then
+    telescope_builtin.git_files()
+  else
+    telescope_builtin.find_files()
+  end
+end
+
+local get_git_root = function()
+    local git_path = vim.fn.system('git rev-parse --git-dir')
+    return string.sub(git_path, 0, -6)
+end
+
+local project_grep = function()
+    local opts = {}
+    if in_git_repo() then
+        opts = {
+            cwd = get_git_root(),
+        }
+    end
+
+    telescope_builtin.live_grep()
+end
+
 -- keybindings
-local telescope_builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pt', new_file, {desc = 'Create new file', unpack(options)})
-vim.keymap.set('n', '<leader>pp', telescope_builtin.git_files, { desc = 'Files in project', unpack(options)})
+vim.keymap.set('n', '<leader>pp', project_files, { desc = 'Files in project', unpack(options)})
 vim.keymap.set('n', '<leader>pf', telescope_builtin.find_files, { desc = 'Files in folder', unpack(options)})
-vim.keymap.set('n', '<leader>/', telescope_builtin.live_grep, { desc = 'Live grep', unpack(options)})
+vim.keymap.set('n', '<leader>/', project_grep, { desc = 'Live grep', unpack(options)})
 vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Live grep under cursor', unpack(options)})
