@@ -20,6 +20,7 @@ local action_state = require "telescope.actions.state"
 -- our picker function: find folder for file creation
 local new_file = function(opts)
   local find_command = { "find", ".", "-type", "d" }
+  local null_command = { "echo" }
   opts = opts or {}
   pickers.new(opts, {
     prompt_title = "Create new File",
@@ -28,9 +29,21 @@ local new_file = function(opts)
     attach_mappings = function(prompt_bufnr, map)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
-        local selection = action_state.get_selected_entry()
-        bufnr = vim.api.nvim_create_buf(false, true)
-        vim.api.nvim_open_win(bufnr, true, {relative='win', row=3, col=3, width=12, height=3})
+        local folder = action_state.get_selected_entry()
+        pickers.new(opts, {
+            promt_title = "File Name",
+            finder = finders.new_oneshot_job(null_command, opts),
+            attach_mappings = function(prompt_bufnr, map)
+              actions.select_default:replace(function()
+                  actions.close(prompt_bufnr)
+                  local file = action_state.get_current_line()
+                  local path = folder[1] .. "/" .. file
+                  local cmd = ":edit " .. path
+                  vim.api.nvim_cmd(vim.api.nvim_parse_cmd(cmd, {}), {})
+              end)
+              return true
+            end,
+        }):find()
       end)
       return true
     end,
