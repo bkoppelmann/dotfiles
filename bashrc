@@ -86,4 +86,5 @@ alias sus='systemctl suspend'
 
 export SWT_GTK3=0
 export EDITOR=nvim
+export PATH=$PATH:~/.local/bin/
 source /usr/share/git/completion/git-completion.bash
