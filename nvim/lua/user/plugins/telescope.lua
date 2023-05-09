@@ -20,6 +20,10 @@ local action_state = require "telescope.actions.state"
 -- our picker function: find folder for file creation
 local new_file = function(opts)
   local find_command = { "find", ".", "-type", "d" }
+  if opts.is_git then
+      find_command = { "git-ls-dir" }
+  end
+
   local null_command = { "echo" }
   opts = opts or {}
   pickers.new(opts, {
@@ -90,10 +94,13 @@ local function project_find_files()
 end
 
 local function project_new_file()
-    local opts = {}
+    local opts = {
+        is_git = false
+    }
     if in_git_repo() then
         opts = {
             cwd = get_git_root(),
+            is_git = true
         }
     end
 
