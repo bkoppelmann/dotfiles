@@ -60,6 +60,8 @@ require('lspconfig')['metals'].setup {
     }
 }
 
+require'lspconfig'.gopls.setup{}
+
 require'lspconfig'.rust_analyzer.setup{
   settings = {
     ['rust-analyzer'] = {
