@@ -37,11 +37,44 @@ require('lspconfig')['pyright'].setup {
     }
 }
 
+local in_git_repo = function()
+  vim.fn.system('git rev-parse --is-inside-work-tree')
+  return vim.v.shell_error == 0
+end
+
+local get_git_root = function()
+    local git_path = vim.fn.system('git rev-parse --absolute-git-dir')
+    return string.sub(git_path, 0, -6)
+end
+
+local function find_compile_commands_folder()
+    if in_git_repo() then
+        local root = get_git_root()
+        local cc_json = vim.split(vim.fn.system('find '..root..' -name compile_commands.json'), '\n')
+        shortest_len = 32768
+        shortest_path = ""
+        for _, path in ipairs(cc_json) do
+            len = string.len(path)
+            if len > string.len(root) then
+                if len < shortest_len then
+                    shortest_len = len
+                    shortest_path = path
+                end
+            end
+        end
+        if shortest_path == "" then
+            return "build"
+        end
+        print(vim.fn.fnamemodify(shortest_path, ":p:h"))
+    end
+    return "build"
+end
+
 require('lspconfig')['ccls'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
     init_options = {
-        compilationDatabaseDirectory="build"
+        compilationDatabaseDirectory=find_compile_commands_folder()
     },
     flags = {
       -- This will be the default in neovim 0.7+
