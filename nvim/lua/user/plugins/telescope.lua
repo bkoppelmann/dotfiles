@@ -54,16 +54,6 @@ local new_file = function(opts)
   }):find()
 end
 
-local in_git_repo = function()
-  print(vim.fn.system('git rev-parse --is-inside-work-tree'))
-  return vim.v.shell_error == 0
-end
-
-local get_git_root = function()
-    local git_path = vim.fn.system('git rev-parse --git-dir')
-    return string.sub(git_path, 0, -6)
-end
-
 local function project_files()
   if in_git_repo() then
     telescope_builtin.git_files()

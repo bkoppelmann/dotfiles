@@ -37,16 +37,6 @@ require('lspconfig')['pyright'].setup {
     }
 }
 
-local in_git_repo = function()
-  vim.fn.system('git rev-parse --is-inside-work-tree')
-  return vim.v.shell_error == 0
-end
-
-local get_git_root = function()
-    local git_path = vim.fn.system('git rev-parse --absolute-git-dir')
-    return string.sub(git_path, 0, -6)
-end
-
 local function find_compile_commands_folder()
     if in_git_repo() then
         local root = get_git_root()

@@ -10,3 +10,12 @@ function trim_trailing_whitespaces()
     end
 end
 
+function in_git_repo()
+  vim.fn.system('git rev-parse --is-inside-work-tree')
+  return vim.v.shell_error == 0
+end
+
+function get_git_root()
+    local git_path = vim.fn.system('git rev-parse --absolute-git-dir')
+    return string.sub(git_path, 0, -6)
+end
