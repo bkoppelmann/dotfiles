@@ -90,4 +90,12 @@ return require('packer').startup(function()
     "gpanders/editorconfig.nvim"
    })
 
+   -- startup
+   use {
+       'goolord/alpha-nvim',
+       requires = { 'nvim-tree/nvim-web-devicons' },
+       config = function ()
+           require('user.plugins.alpha')
+       end,
+   }
 end)
