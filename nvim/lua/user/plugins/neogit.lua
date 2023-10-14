@@ -43,7 +43,7 @@ neogit.setup {
     --   }
     -- }
     --
-    diffview = false  
+    diffview = false
   },
   -- Setting any section to `false` will make the section not render at all
   sections = {
@@ -60,10 +60,12 @@ neogit.setup {
       folded = true
     },
     unpulled = {
-      folded = true
+      folded = true,
+      hidden = false
     },
     unmerged = {
-      folded = false
+      folded = false,
+      hidden = false
     },
     recent = {
       folded = true
