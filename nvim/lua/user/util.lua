@@ -16,6 +16,6 @@ function in_git_repo()
 end
 
 function get_git_root()
-    local git_path = vim.fn.system('git rev-parse --absolute-git-dir')
-    return string.sub(git_path, 0, -6)
+    local git_path = vim.fn.system('git rev-parse --show-toplevel')
+    return string.sub(git_path, 0, -2)
 end
