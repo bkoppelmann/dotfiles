@@ -3,3 +3,4 @@ plugged
 swap
 undo
 viminfo
+plugin/packer_compiled.lua
