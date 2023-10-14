@@ -55,7 +55,9 @@ local function find_compile_commands_folder()
         if shortest_path == "" then
             return "build"
         end
-        print(vim.fn.fnamemodify(shortest_path, ":p:h"))
+        local res = vim.fn.fnamemodify(shortest_path, ":p:h")
+        print('compile_commands.json in "' .. res .. '"')
+        return res
     end
     return "build"
 end
