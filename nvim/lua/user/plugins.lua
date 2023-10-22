@@ -85,17 +85,21 @@ return require('packer').startup(function()
     end,
   })
 
-   -- editorconfig
-   use({
+  -- editorconfig
+  use({
     "gpanders/editorconfig.nvim"
-   })
+  })
 
-   -- startup
-   use {
-       'goolord/alpha-nvim',
-       requires = { 'nvim-tree/nvim-web-devicons' },
-       config = function ()
-           require('user.plugins.alpha')
-       end,
-   }
+  -- startup
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+      require('user.plugins.alpha')
+    end,
+  }
+
+
+  -- colorschema 
+  use "EdenEast/nightfox.nvim" 
 end)
