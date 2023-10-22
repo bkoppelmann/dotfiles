@@ -99,7 +99,13 @@ return require('packer').startup(function()
     end,
   }
 
-
+  -- shows a bar for each scope
+  use {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function ()
+      require("ibl").setup()
+    end,
+  }
   -- colorschema 
   use "EdenEast/nightfox.nvim" 
 end)
