@@ -52,8 +52,16 @@ return require('packer').startup(function()
         require('user.plugins.neogit')
     end,
   })
+
   -- git blame
-  use { 'f-person/git-blame.nvim' }
+  use {
+    'f-person/git-blame.nvim',
+    config = function()
+      require('gitblame').setup {
+        enabled = false,
+      }
+    end
+  }
 
   -- treesitter
   use({
