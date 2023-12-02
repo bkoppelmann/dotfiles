@@ -124,5 +124,18 @@ return require('packer').startup(function()
   }
 
   -- colorschema
-  use "EdenEast/nightfox.nvim"
+  use {
+    "EdenEast/nightfox.nvim",
+    config = function()
+      vim.cmd("colorscheme kbastian2")
+    end
+  }
+  -- autoformatter
+  use {
+    "mhartington/formatter.nvim",
+    config = function()
+      require('user.plugins.formatter')
+    end
+  }
+
 end)
