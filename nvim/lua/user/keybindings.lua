@@ -1,7 +1,7 @@
 local map = vim.api.nvim_set_keymap
 local g = vim.g
 
-map('n', '<Space>', '', {})
+--map('n', '<Space>', '', {})
 g.mapleader = ' '
 
 options = { noremap = true, silent = true }
@@ -24,3 +24,13 @@ map('v', '>', '>gv', options)
 -- neogit
 map('n', '<leader>gg', "<cmd>Neogit<CR>", { desc = "NeoGit", unpack(options)})
 map('n', '<leader>gb', "<cmd>GitBlameToggle<CR>", options)
+
+-- terminal
+map('t', '<ESC>', '<C-\\><C-n>', options)
+map('n', '<leader>t', '<cmd> lua enable_terminal()<CR>', { desc = "Open terminal", unpack(options)})
+
+function enable_terminal()
+    vim.cmd('split') 
+    vim.cmd('terminal') 
+    vim.cmd('startinsert')
+end

@@ -23,5 +23,4 @@ o.splitbelow = true
 o.wrapscan = true
 o.list = true
 o.listchars = "trail:·,nbsp:◇,tab:»· ,extends:▸,precedes:◂"
-vim.cmd("colorscheme duskfox")
 vim.opt.mouse = ""

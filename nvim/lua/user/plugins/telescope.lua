@@ -97,8 +97,8 @@ local function project_new_file()
     new_file(opts)
 end
 
-
 -- keybindings
+options = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>pt', project_new_file, {desc = 'Create new file', unpack(options)})
 vim.keymap.set('n', '<leader>pp', project_files, { desc = 'Files in project', unpack(options)})
 vim.keymap.set('n', '<leader>pf', project_find_files, { desc = 'Files in folder', unpack(options)})

@@ -1,5 +1,5 @@
 require('user.options')
-require('user.plugins')
 require('user.keybindings')
+require('user.plugins')
 require('user.util')
 require('user.autocmd')

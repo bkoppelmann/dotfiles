@@ -37,6 +37,7 @@ require('lspconfig')['pyright'].setup {
     }
 }
 
+require('user.util')
 local function find_compile_commands_folder()
     if in_git_repo() then
         local root = get_git_root()
