@@ -8,6 +8,17 @@ telescope.setup({
                 ['<esc>'] = actions.close,
             }
         }
+    },
+    pickers = {
+        find_files = {
+            theme = "dropdown"
+        },
+        git_files = {
+            theme = "dropdown"
+        },
+        live_grep = {
+            theme = "dropdown"
+        }
     }
 })
 
@@ -102,5 +113,7 @@ options = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>pt', project_new_file, {desc = 'Create new file', unpack(options)})
 vim.keymap.set('n', '<leader>pp', project_files, { desc = 'Files in project', unpack(options)})
 vim.keymap.set('n', '<leader>pf', project_find_files, { desc = 'Files in folder', unpack(options)})
+vim.keymap.set('n', '<leader>pb', telescope_builtin.buffers, { desc = 'Fuzzy search buffers', unpack(options)})
 vim.keymap.set('n', '<leader>/', project_grep, { desc = 'Live grep', unpack(options)})
 vim.keymap.set('n', '<leader>*', telescope_builtin.grep_string, { desc = 'Live grep under cursor', unpack(options)})
+vim.keymap.set('n', '<leader>m', telescope_builtin.marks, { desc = 'Fuzzy Search Marks', unpack(options)})
