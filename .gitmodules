@@ -1,6 +1,3 @@
-[submodule "mbox2org"]
-	path = mbox2org
-	url = https://github.com/bkoppelmann/mbox2org.git
 [submodule "neomutt/private"]
 	path = neomutt/private
 	url = git@git.koppelmanns.de:kbastian/neomutt-private.git
